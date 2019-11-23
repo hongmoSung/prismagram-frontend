@@ -1,5 +1,5 @@
 export const defaults = {
-    lsLoggedIn: localStorage.getItem("token") !== null ? true : false
+    lsLoggedIn: Boolean(localStorage.getItem("token")) || false
 };
 
 export const resolvers = {
