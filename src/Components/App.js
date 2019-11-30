@@ -12,7 +12,7 @@ import Footer from "./Footer";
 
 const QUERY = gql`
   {
-    lsLoggedIn @client
+    isLoggedIn @client
   }
 `;
 
@@ -23,13 +23,13 @@ const Wrapper = styled.div`
 `;
 
 export default () => {
-  const {data: {lsLoggedIn}} = useQuery(QUERY);
-
+  const {data: {isLoggedIn}} = useQuery(QUERY);
+  
   return (
     <ThemeProvider theme={Theme}>
     <Wrapper>
       <GlobalStyles/>
-      <Router isLoggedIn={lsLoggedIn} />
+      <Router isLoggedIn={isLoggedIn} />
       <Footer />
       <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
       </Wrapper>
