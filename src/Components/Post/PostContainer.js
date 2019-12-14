@@ -50,6 +50,16 @@ const PostContainer = ({
         }
     }
 
+    const onKeyPress = event => {
+        const {wich} = event.keyCode;
+        if(wich === 13) {
+            event.preventDefault();
+            comment.setValue("");
+            // addCommentMutation();
+        }
+        return;
+    };
+
     return <PostPresenter
         user={user} 
         files={files}
@@ -59,11 +69,12 @@ const PostContainer = ({
         isLiked={isLikedS}
         comments={comments}
         createdAt={createdAt}
-        newCommnet={comment}
+        newComment={comment}
         setIsLiked={setIsLiked}
         setLikeCount={setLikeCount}
         currnetItem={currnetItem}
         toggleLike={toggleLike}
+        onKeyPress={onKeyPress}
     />;
 }
 

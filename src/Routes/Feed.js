@@ -26,6 +26,10 @@ const FEED_QUERY = gql`
             comments {
                 id
                 text
+                user {
+                    id
+                    username
+                  }
             }
             createdAt
         }
